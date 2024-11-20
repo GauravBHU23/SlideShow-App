@@ -2,6 +2,17 @@ import React from 'react';
 
 function Slides({slides}) {
 
+    const [activeStep,setActiveStep] = React.useState(0);
+    let allSlides = slides;
+
+    const reset  =() => {
+        setActiveStep(0)
+    }
+    const next = () => {
+        let step = activeStep;
+        setActiveStep(--activeStep)
+    }
+
     return (
         <div>
             <div id="navigation" className="text-center">
